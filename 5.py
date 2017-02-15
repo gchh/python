@@ -43,3 +43,17 @@ def str2float(s):
     return str2int(s)/(10**(len(s)-t))#如果直接用x，当输入不带小数点的整数时，输出却是整数/10得到的一个浮点数
 print(str2float(l))
 print('int or float :',isinstance(str2float(l),int) or isinstance(str2float(l),float))
+
+#判断一个数是否是回数
+def is_palindrome(n):
+    #return str(n)==str(n)[::-1]
+    #或者用下面的代码
+    a,b=n,0
+    while a:
+        b=b*10+a%10
+        a=int(a/10) #必须加上int()只保留结果的整数部分
+    return(n==b)
+
+# 测试:
+output = filter(is_palindrome, range(1, 1000))
+print(list(output))
