@@ -19,12 +19,3 @@ class MyList(list,metaclass=ListMetaclass):
 L=MyList()
 L.add(1)
 print(L)
-
-class MyList(object):
-    def add(self,value):
-        self.append(value)
-        #return self
-
-L=MyList()
-L.add(1)
-#print(L)
