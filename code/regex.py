@@ -18,7 +18,12 @@ print(m.groups())
 
 
 email=input('输入Email:')
-if re.match(r'[0-9a-zA-Z-.\_]+@[0-9a-zA-Z\_.-]+',email):
+if re.match(r'[0-9a-zA-Z-.\_\s<>]+@[0-9a-zA-Z\_.-]+',email):
     print('ok')
+    m=re.match(r'^(<)([0-9a-zA-Z-\_.\s]+)(>)\s*([0-9a-zA-Z-.\_\s@]+)$',email)
+    if m:
+        print(m.group(2))
+    else:
+        print('no name') 
 else:
     print('failed')
