@@ -40,5 +40,5 @@ def pre(x):
         return True
     else:
         False
-ns=itertools.takewhile(pre(10),natuals)
+ns=itertools.takewhile(pre,natuals)
 print(list(ns))
